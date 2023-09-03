@@ -18,10 +18,12 @@ ActiveRecord::Schema.define(version: 2023_09_03_122412) do
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.datetime "date_of_birth", null: false
-    t.string "gender", null: false
-    t.string "university", null: false
+    t.string "email", null: false
+    t.datetime "date_of_birth"
+    t.string "gender"
+    t.string "university"
     t.string "password_digest", null: false
+    t.string "current_session_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
