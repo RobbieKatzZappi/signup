@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'start', to: 'sign_up#show', as: :show
+  post 'next', to: 'sign_up#create', as: :create
+  patch 'done', to: 'sign_up#update', as: :update
+
+  get 'error', to: 'sign_up#error', as: :error
 end
