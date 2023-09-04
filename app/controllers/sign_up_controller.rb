@@ -1,5 +1,6 @@
 class SignUpController < Base
   def show
+    render :create
   end
 
   def create
@@ -9,6 +10,7 @@ class SignUpController < Base
       render :error
     else
       set_current_user(ActiveType.cast(sign_up, User))
+      render :update
     end
   end
 
@@ -19,7 +21,7 @@ class SignUpController < Base
     if sign_up.errors.present?
       render :error
     else
-      set_current_user(ActiveType.cast(sign_up, User))
+      render :done
     end
   end
 
