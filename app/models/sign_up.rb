@@ -3,11 +3,9 @@
     attribute :password_confirmation
 
     validate :password_confirmation_correctness
-    validates_length_of :password, minimum: 8, allow_nil: true
     validate :email_correctness
-
-    validates :date_of_birth, inclusion: { in: 150.years.ago..18.years.ago }, allow_nil: true
-    validates :gender, inclusion: { in: ['male', 'female', 'non-binary'] }, allow_nil: true
+    validate :password_confirmation_correctness
+    validates_length_of :password, minimum: 8, allow_nil: true
 
     before_save :create_password_digest
 

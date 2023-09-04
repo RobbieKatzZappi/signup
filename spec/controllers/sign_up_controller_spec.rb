@@ -5,7 +5,7 @@ describe SignUpController, type: :controller do
     subject { get :show, params: params }
     let(:params) {}
     it 'renders the correct view' do
-      expect(subject).to render_template 'sign_up/show'
+      expect(subject).to render_template 'sign_up/create'
     end
   end
 
@@ -24,7 +24,7 @@ describe SignUpController, type: :controller do
       end
 
       it 'renders the correct view' do
-        expect(subject).to render_template 'sign_up/create'
+        expect(subject).to render_template 'sign_up/update'
       end
 
       it 'creates a new user in the database' do
@@ -88,7 +88,7 @@ describe SignUpController, type: :controller do
       end
 
       it 'renders the correct view' do
-        expect(subject).to render_template 'sign_up/update'
+        expect(subject).to render_template 'sign_up/done'
       end
     end
 
